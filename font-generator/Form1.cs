@@ -62,21 +62,27 @@ namespace font_generator
             }
 
             using var fileDialog = new SaveFileDialog();
-            fileDialog.Filter = $".{generator.FileExtension}-Files|*.{generator.FileExtension}";
+            fileDialog.Filter = $"*.{generator.FileExtension} files|*.{generator.FileExtension}";
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 GenerateFont(fileDialog.FileName, generator);
             }
+
+            MessageBox.Show("Completed!");
         }
 
         private void GenerateFont(string file, IFontFileGenerator generator)
         {
             generator.WriteHead(iFontName.Text, (int)iWidth.Value, (int)iHeight.Value);
-            for (char c = '\0'; c < 127; c++)
+            GenerationProgress.Maximum = 256;
+            GenerationProgress.Value = 0;
+            for (char c = '\0'; c < 256; c++)
             {
                 GenerateChar(c);
                 generator.WriteChar(c, (Bitmap) pbPreview.Image);
+                GenerationProgress.Value++;
+                GenerationProgress.Update();
             }
             generator.WriteTail();
 

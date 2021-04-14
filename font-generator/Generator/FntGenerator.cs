@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Text;
 
 namespace font_generator.Generator
 {
@@ -9,7 +7,7 @@ namespace font_generator.Generator
     {
         public string FileExtension => "fnt";
 
-        public byte[] ToByteArray()
+        public void WriteHead(string name, int width, int height)
         {
             throw new NotImplementedException();
         }
@@ -19,12 +17,12 @@ namespace font_generator.Generator
             throw new NotImplementedException();
         }
 
-        public void WriteHead(string name, int width, int height)
+        public void WriteTail()
         {
             throw new NotImplementedException();
         }
 
-        public void WriteTail()
+        public byte[] ToByteArray()
         {
             throw new NotImplementedException();
         }

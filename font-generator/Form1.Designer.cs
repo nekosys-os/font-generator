@@ -298,6 +298,11 @@ namespace font_generator
             0,
             0,
             0});
+            this.iYOffset.Minimum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            -2147483648});
             this.iYOffset.Name = "iYOffset";
             this.iYOffset.Size = new System.Drawing.Size(55, 23);
             this.iYOffset.TabIndex = 2;
@@ -319,6 +324,11 @@ namespace font_generator
             0,
             0,
             0});
+            this.iXOffset.Minimum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            -2147483648});
             this.iXOffset.Name = "iXOffset";
             this.iXOffset.Size = new System.Drawing.Size(55, 23);
             this.iXOffset.TabIndex = 0;
