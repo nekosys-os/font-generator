@@ -31,7 +31,7 @@ namespace font_generator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.iFontName = new System.Windows.Forms.TextBox();
+            this.iSelectedFont = new System.Windows.Forms.TextBox();
             this.btnSelectFont = new System.Windows.Forms.Button();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.GenerationProgress = new System.Windows.Forms.ProgressBar();
@@ -40,6 +40,8 @@ namespace font_generator
             this.iPreviewChar = new System.Windows.Forms.TextBox();
             this.pbPreview = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.iFontName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.iFntFile = new System.Windows.Forms.RadioButton();
             this.iCArray = new System.Windows.Forms.RadioButton();
@@ -69,14 +71,14 @@ namespace font_generator
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Font:";
             // 
-            // iFontName
+            // iSelectedFont
             // 
-            this.iFontName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iFontName.Location = new System.Drawing.Point(87, 10);
-            this.iFontName.Name = "iFontName";
-            this.iFontName.ReadOnly = true;
-            this.iFontName.Size = new System.Drawing.Size(192, 23);
-            this.iFontName.TabIndex = 1;
+            this.iSelectedFont.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iSelectedFont.Location = new System.Drawing.Point(87, 10);
+            this.iSelectedFont.Name = "iSelectedFont";
+            this.iSelectedFont.ReadOnly = true;
+            this.iSelectedFont.Size = new System.Drawing.Size(192, 23);
+            this.iSelectedFont.TabIndex = 1;
             // 
             // btnSelectFont
             // 
@@ -90,16 +92,17 @@ namespace font_generator
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(12, 357);
+            this.btnGenerate.Location = new System.Drawing.Point(13, 392);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(325, 23);
             this.btnGenerate.TabIndex = 3;
             this.btnGenerate.Text = "Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // GenerationProgress
             // 
-            this.GenerationProgress.Location = new System.Drawing.Point(12, 386);
+            this.GenerationProgress.Location = new System.Drawing.Point(13, 421);
             this.GenerationProgress.Name = "GenerationProgress";
             this.GenerationProgress.Size = new System.Drawing.Size(325, 19);
             this.GenerationProgress.TabIndex = 4;
@@ -148,6 +151,8 @@ namespace font_generator
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.iFontName);
+            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.iFntFile);
             this.groupBox2.Controls.Add(this.iCArray);
@@ -161,10 +166,27 @@ namespace font_generator
             this.groupBox2.Controls.Add(this.iXOffset);
             this.groupBox2.Location = new System.Drawing.Point(13, 223);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 113);
+            this.groupBox2.Size = new System.Drawing.Size(320, 156);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
+            // 
+            // iFontName
+            // 
+            this.iFontName.Location = new System.Drawing.Point(109, 117);
+            this.iFontName.Name = "iFontName";
+            this.iFontName.Size = new System.Drawing.Size(193, 23);
+            this.iFontName.TabIndex = 12;
+            this.iFontName.Text = "FONT01";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 120);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Font name:";
             // 
             // label6
             // 
@@ -305,13 +327,13 @@ namespace font_generator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 415);
+            this.ClientSize = new System.Drawing.Size(349, 447);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GenerationProgress);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.btnSelectFont);
-            this.Controls.Add(this.iFontName);
+            this.Controls.Add(this.iSelectedFont);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "nekosys Font Generator";
@@ -332,7 +354,7 @@ namespace font_generator
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox iFontName;
+        private System.Windows.Forms.TextBox iSelectedFont;
         private System.Windows.Forms.Button btnSelectFont;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.ProgressBar GenerationProgress;
@@ -352,6 +374,8 @@ namespace font_generator
         private System.Windows.Forms.RadioButton iFntFile;
         private System.Windows.Forms.RadioButton iCArray;
         private System.Windows.Forms.Button btnRefreshPreview;
+        private System.Windows.Forms.TextBox iFontName;
+        private System.Windows.Forms.Label label7;
     }
 }
 
