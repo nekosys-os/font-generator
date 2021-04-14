@@ -7,14 +7,6 @@ namespace font_generator.Generator
 {
     class FntGenerator : IFontFileGenerator
     {
-        /*
-         * fnt file structure
-         * ==================
-         * 
-         * header:       FNT[c_str NAME][u8 w][u8 h]
-         * for each row: [u32[][] data][u8 char_width]
-         * tail: 0x0216
-         */
 
         public string FileExtension => "fnt";
         private MemoryStream stream;
