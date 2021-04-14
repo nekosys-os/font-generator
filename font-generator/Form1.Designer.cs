@@ -36,8 +36,9 @@ namespace font_generator
             this.btnGenerate = new System.Windows.Forms.Button();
             this.GenerationProgress = new System.Windows.Forms.ProgressBar();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnRefreshPreview = new System.Windows.Forms.Button();
             this.iPreviewChar = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbPreview = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.iFntFile = new System.Windows.Forms.RadioButton();
@@ -50,9 +51,8 @@ namespace font_generator
             this.iYOffset = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.iXOffset = new System.Windows.Forms.NumericUpDown();
-            this.btnRefreshPreview = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iWidth)).BeginInit();
@@ -108,13 +108,23 @@ namespace font_generator
             // 
             this.groupBox1.Controls.Add(this.btnRefreshPreview);
             this.groupBox1.Controls.Add(this.iPreviewChar);
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.pbPreview);
             this.groupBox1.Location = new System.Drawing.Point(13, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(320, 156);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Preview";
+            // 
+            // btnRefreshPreview
+            // 
+            this.btnRefreshPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshPreview.Image")));
+            this.btnRefreshPreview.Location = new System.Drawing.Point(247, 64);
+            this.btnRefreshPreview.Name = "btnRefreshPreview";
+            this.btnRefreshPreview.Size = new System.Drawing.Size(39, 30);
+            this.btnRefreshPreview.TabIndex = 7;
+            this.btnRefreshPreview.UseVisualStyleBackColor = true;
+            this.btnRefreshPreview.Click += new System.EventHandler(this.btnRefreshPreview_Click);
             // 
             // iPreviewChar
             // 
@@ -126,15 +136,15 @@ namespace font_generator
             this.iPreviewChar.Text = "x";
             this.iPreviewChar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pictureBox1
+            // pbPreview
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(112, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(97, 89);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbPreview.BackColor = System.Drawing.Color.Gray;
+            this.pbPreview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPreview.Location = new System.Drawing.Point(112, 26);
+            this.pbPreview.Name = "pbPreview";
+            this.pbPreview.Size = new System.Drawing.Size(97, 89);
+            this.pbPreview.TabIndex = 0;
+            this.pbPreview.TabStop = false;
             // 
             // groupBox2
             // 
@@ -291,15 +301,6 @@ namespace font_generator
             this.iXOffset.Size = new System.Drawing.Size(55, 23);
             this.iXOffset.TabIndex = 0;
             // 
-            // btnRefreshPreview
-            // 
-            this.btnRefreshPreview.Image = ((System.Drawing.Image)(resources.GetObject("btnRefreshPreview.Image")));
-            this.btnRefreshPreview.Location = new System.Drawing.Point(247, 64);
-            this.btnRefreshPreview.Name = "btnRefreshPreview";
-            this.btnRefreshPreview.Size = new System.Drawing.Size(39, 30);
-            this.btnRefreshPreview.TabIndex = 7;
-            this.btnRefreshPreview.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -316,7 +317,7 @@ namespace font_generator
             this.Text = "nekosys Font Generator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iHeight)).EndInit();
@@ -336,7 +337,7 @@ namespace font_generator
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.ProgressBar GenerationProgress;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbPreview;
         private System.Windows.Forms.TextBox iPreviewChar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
