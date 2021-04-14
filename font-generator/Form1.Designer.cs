@@ -53,6 +53,7 @@ namespace font_generator
             this.iYOffset = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.iXOffset = new System.Windows.Forms.NumericUpDown();
+            this.cbUseHinting = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,7 +93,7 @@ namespace font_generator
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(13, 392);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 400);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(325, 23);
             this.btnGenerate.TabIndex = 3;
@@ -102,7 +103,7 @@ namespace font_generator
             // 
             // GenerationProgress
             // 
-            this.GenerationProgress.Location = new System.Drawing.Point(13, 421);
+            this.GenerationProgress.Location = new System.Drawing.Point(12, 429);
             this.GenerationProgress.Name = "GenerationProgress";
             this.GenerationProgress.Size = new System.Drawing.Size(325, 19);
             this.GenerationProgress.TabIndex = 4;
@@ -166,14 +167,14 @@ namespace font_generator
             this.groupBox2.Controls.Add(this.iXOffset);
             this.groupBox2.Location = new System.Drawing.Point(13, 223);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 156);
+            this.groupBox2.Size = new System.Drawing.Size(320, 160);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
             // 
             // iFontName
             // 
-            this.iFontName.Location = new System.Drawing.Point(109, 117);
+            this.iFontName.Location = new System.Drawing.Point(109, 119);
             this.iFontName.Name = "iFontName";
             this.iFontName.Size = new System.Drawing.Size(193, 23);
             this.iFontName.TabIndex = 12;
@@ -182,7 +183,7 @@ namespace font_generator
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 120);
+            this.label7.Location = new System.Drawing.Point(35, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 15);
             this.label7.TabIndex = 11;
@@ -191,7 +192,7 @@ namespace font_generator
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 88);
+            this.label6.Location = new System.Drawing.Point(16, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 15);
             this.label6.TabIndex = 10;
@@ -200,7 +201,7 @@ namespace font_generator
             // iFntFile
             // 
             this.iFntFile.AutoSize = true;
-            this.iFntFile.Location = new System.Drawing.Point(179, 86);
+            this.iFntFile.Location = new System.Drawing.Point(179, 88);
             this.iFntFile.Name = "iFntFile";
             this.iFntFile.Size = new System.Drawing.Size(64, 19);
             this.iFntFile.TabIndex = 9;
@@ -211,7 +212,7 @@ namespace font_generator
             // 
             this.iCArray.AutoSize = true;
             this.iCArray.Checked = true;
-            this.iCArray.Location = new System.Drawing.Point(109, 86);
+            this.iCArray.Location = new System.Drawing.Point(109, 88);
             this.iCArray.Name = "iCArray";
             this.iCArray.Size = new System.Drawing.Size(64, 19);
             this.iCArray.TabIndex = 8;
@@ -333,11 +334,24 @@ namespace font_generator
             this.iXOffset.Size = new System.Drawing.Size(55, 23);
             this.iXOffset.TabIndex = 0;
             // 
+            // cbUseHinting
+            // 
+            this.cbUseHinting.AutoSize = true;
+            this.cbUseHinting.Checked = true;
+            this.cbUseHinting.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbUseHinting.Location = new System.Drawing.Point(87, 35);
+            this.cbUseHinting.Name = "cbUseHinting";
+            this.cbUseHinting.Size = new System.Drawing.Size(86, 19);
+            this.cbUseHinting.TabIndex = 13;
+            this.cbUseHinting.Text = "Use hinting";
+            this.cbUseHinting.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 447);
+            this.ClientSize = new System.Drawing.Size(349, 462);
+            this.Controls.Add(this.cbUseHinting);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GenerationProgress);
@@ -386,6 +400,7 @@ namespace font_generator
         private System.Windows.Forms.Button btnRefreshPreview;
         private System.Windows.Forms.TextBox iFontName;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox cbUseHinting;
     }
 }
 
