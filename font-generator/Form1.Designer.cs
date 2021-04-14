@@ -40,6 +40,8 @@ namespace font_generator
             this.iPreviewChar = new System.Windows.Forms.TextBox();
             this.pbPreview = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbAlignLeft = new System.Windows.Forms.CheckBox();
+            this.cbUseHinting = new System.Windows.Forms.CheckBox();
             this.iFontName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,7 +55,6 @@ namespace font_generator
             this.iYOffset = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.iXOffset = new System.Windows.Forms.NumericUpDown();
-            this.cbUseHinting = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPreview)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -93,7 +94,7 @@ namespace font_generator
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(12, 400);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 442);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(325, 23);
             this.btnGenerate.TabIndex = 3;
@@ -103,7 +104,7 @@ namespace font_generator
             // 
             // GenerationProgress
             // 
-            this.GenerationProgress.Location = new System.Drawing.Point(12, 429);
+            this.GenerationProgress.Location = new System.Drawing.Point(12, 471);
             this.GenerationProgress.Name = "GenerationProgress";
             this.GenerationProgress.Size = new System.Drawing.Size(325, 19);
             this.GenerationProgress.TabIndex = 4;
@@ -152,6 +153,8 @@ namespace font_generator
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbAlignLeft);
+            this.groupBox2.Controls.Add(this.cbUseHinting);
             this.groupBox2.Controls.Add(this.iFontName);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
@@ -167,10 +170,34 @@ namespace font_generator
             this.groupBox2.Controls.Add(this.iXOffset);
             this.groupBox2.Location = new System.Drawing.Point(13, 223);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(320, 160);
+            this.groupBox2.Size = new System.Drawing.Size(320, 195);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
+            // 
+            // cbAlignLeft
+            // 
+            this.cbAlignLeft.AutoSize = true;
+            this.cbAlignLeft.Checked = true;
+            this.cbAlignLeft.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAlignLeft.Location = new System.Drawing.Point(121, 162);
+            this.cbAlignLeft.Name = "cbAlignLeft";
+            this.cbAlignLeft.Size = new System.Drawing.Size(165, 19);
+            this.cbAlignLeft.TabIndex = 14;
+            this.cbAlignLeft.Text = "Align characters to the left";
+            this.cbAlignLeft.UseVisualStyleBackColor = true;
+            // 
+            // cbUseHinting
+            // 
+            this.cbUseHinting.AutoSize = true;
+            this.cbUseHinting.Checked = true;
+            this.cbUseHinting.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbUseHinting.Location = new System.Drawing.Point(16, 162);
+            this.cbUseHinting.Name = "cbUseHinting";
+            this.cbUseHinting.Size = new System.Drawing.Size(86, 19);
+            this.cbUseHinting.TabIndex = 13;
+            this.cbUseHinting.Text = "Use hinting";
+            this.cbUseHinting.UseVisualStyleBackColor = true;
             // 
             // iFontName
             // 
@@ -246,7 +273,7 @@ namespace font_generator
             this.iHeight.Size = new System.Drawing.Size(55, 23);
             this.iHeight.TabIndex = 6;
             this.iHeight.Value = new decimal(new int[] {
-            8,
+            16,
             0,
             0,
             0});
@@ -277,7 +304,7 @@ namespace font_generator
             this.iWidth.Size = new System.Drawing.Size(55, 23);
             this.iWidth.TabIndex = 4;
             this.iWidth.Value = new decimal(new int[] {
-            8,
+            16,
             0,
             0,
             0});
@@ -334,24 +361,11 @@ namespace font_generator
             this.iXOffset.Size = new System.Drawing.Size(55, 23);
             this.iXOffset.TabIndex = 0;
             // 
-            // cbUseHinting
-            // 
-            this.cbUseHinting.AutoSize = true;
-            this.cbUseHinting.Checked = true;
-            this.cbUseHinting.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbUseHinting.Location = new System.Drawing.Point(87, 35);
-            this.cbUseHinting.Name = "cbUseHinting";
-            this.cbUseHinting.Size = new System.Drawing.Size(86, 19);
-            this.cbUseHinting.TabIndex = 13;
-            this.cbUseHinting.Text = "Use hinting";
-            this.cbUseHinting.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 462);
-            this.Controls.Add(this.cbUseHinting);
+            this.ClientSize = new System.Drawing.Size(349, 503);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GenerationProgress);
@@ -401,6 +415,7 @@ namespace font_generator
         private System.Windows.Forms.TextBox iFontName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox cbUseHinting;
+        private System.Windows.Forms.CheckBox cbAlignLeft;
     }
 }
 

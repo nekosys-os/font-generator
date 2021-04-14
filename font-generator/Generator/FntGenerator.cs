@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 
@@ -11,7 +12,7 @@ namespace font_generator.Generator
          * ==================
          * 
          * header:       FNT[c_str NAME][u8 w][u8 h]
-         * for each row: [u8[][] data][u8 char_width]
+         * for each row: [u32[][] data][u8 char_width]
          * tail: 0x0216
          */
 
@@ -64,6 +65,7 @@ namespace font_generator.Generator
                 {
                     if (bitmap.GetPixel(col, row).R == 0)
                         rowWidth--;
+                    else break;
                 }
 
                 if (rowWidth > charWidth)
@@ -72,6 +74,8 @@ namespace font_generator.Generator
                 writer.Write(rowValue); // Write the column mask for each row
             }
 
+            if (charWidth == 0)
+                charWidth = (byte)(width / 2);
             writer.Write(charWidth); // Character width ('advance') of that character
         }
 

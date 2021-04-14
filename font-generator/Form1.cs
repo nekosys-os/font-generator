@@ -108,7 +108,7 @@ namespace font_generator
         private void GenerateChar(char c)
         {
             using var charGenerator = new CharGenerator(currentFont, cbUseHinting.Checked, (int)iWidth.Value, (int)iHeight.Value);
-            charGenerator.Draw(c, (int)iXOffset.Value, (int)iYOffset.Value);
+            charGenerator.Draw(c, (int)iXOffset.Value, (int)iYOffset.Value, cbAlignLeft.Checked);
             pbPreview.Image = charGenerator.Bitmap;
             pbPreview.Update();
         }

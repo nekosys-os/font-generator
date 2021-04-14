@@ -20,11 +20,30 @@ namespace font_generator.Generator
             graphics = Graphics.FromImage(Bitmap);
         }
 
-        public void Draw(char c, int xOffset, int yOffset)
+        public void Draw(char c, int xOffset, int yOffset, bool alignLeft)
         {
             graphics.TextRenderingHint = useHinting ? TextRenderingHint.SingleBitPerPixelGridFit : TextRenderingHint.SingleBitPerPixel;
             graphics.Clear(Color.Black);
             graphics.DrawString(c.ToString(), font, Brushes.White, new PointF(xOffset, yOffset));
+
+            if (alignLeft)
+            {
+                int minX = Bitmap.Width - 1;
+                for (int y = 0; y < Bitmap.Height; y++)
+                {
+                    for (int x = 0; x < Bitmap.Width; x++)
+                    {
+                        if (Bitmap.GetPixel(x, y).R != 0)
+                        {
+                            if (x < minX)
+                                minX = x;
+                            break;
+                        }
+                    }
+                }
+
+                Draw(c, xOffset - minX, yOffset, false);
+            }
         }
 
         public void Dispose()
