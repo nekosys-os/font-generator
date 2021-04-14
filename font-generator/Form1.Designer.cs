@@ -74,7 +74,7 @@ namespace font_generator
             // 
             // iSelectedFont
             // 
-            this.iSelectedFont.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iSelectedFont.Cursor = System.Windows.Forms.Cursors.Default;
             this.iSelectedFont.Location = new System.Drawing.Point(87, 10);
             this.iSelectedFont.Name = "iSelectedFont";
             this.iSelectedFont.ReadOnly = true;
