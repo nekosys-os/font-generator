@@ -10,7 +10,7 @@ namespace font_generator.Generator
          * fnt file structure
          * ==================
          * 
-         * header:       FNT[u8 name_len][chars NAME][u8 w][u8 h]
+         * header:       FNT[c_str NAME][u8 w][u8 h]
          * for each row: [u8[][] data][u8 char_width]
          * tail: 0x0216
          */
@@ -35,9 +35,9 @@ namespace font_generator.Generator
             // Magic
             writer.Write(new[] { 'F', 'N', 'T' });
 
-            // Name, prefixed with uint8
-            writer.Write((byte)name.Length);
+            // Name, terminated with nullbyte
             writer.Write(name.ToCharArray());
+            writer.Write((byte)0x00);
 
             // Width x Height
             writer.Write((byte)width);
